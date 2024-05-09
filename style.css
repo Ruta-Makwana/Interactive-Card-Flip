@@ -1,0 +1,122 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Handlee", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+/* styles for entire body */
+body{
+    background: url(https://images.pexels.com/photos/1169754/pexels-photo-1169754.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    text-align: center;
+}
+/* styles for header */
+header{
+    background-color: rgba(11, 10, 15, 0.6);
+    color: #f2ddd4;
+    text-align: center;
+    padding: 1.2rem;
+}
+/* container for all cards */
+.card-container{
+    width: 90%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin: 2rem auto;    
+    column-gap: 150px;
+    row-gap: 85px;
+}
+.card{
+    width: 200px;
+    height: 300px;
+    margin: 10px;
+    display: inline-block;
+    border-radius: 20px;
+    animation: spin 8s linear infinite;
+    perspective: 1000px; 
+}
+
+.card:hover{
+    animation: none;
+}
+
+.zodiac-card{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1s ease; 
+}
+
+/* flip card*/
+.card:hover .zodiac-card {
+    transform: rotateY(180deg); 
+}
+
+.card-front, .card-back{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 20px;
+    backface-visibility: hidden;
+    overflow: hidden;
+}
+
+.card-front{
+    box-shadow: 0 0 10px black;
+    border: 1px solid black;
+}
+
+.card-front img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-back{
+    background: #f2ddd4;
+    color: black;
+    border: 1px solid black;
+    transform: rotateY(180deg);
+}
+
+.card-back h3{
+    font-size: 18px;
+    padding: 20px;
+    color: #8b2700;
+}
+
+.card-back p{
+    font-size: 14px;
+    padding: 0 10px;
+    margin-top: 10px;
+}
+
+@keyframes spin{
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(90deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    75% {
+        transform: rotate(270deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
